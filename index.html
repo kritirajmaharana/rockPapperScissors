@@ -1,13 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Papper Scissors Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body style="background-color: rgb(67, 67, 67);">
-    <h1>Game rock paper scissor</h1>
-    
+<body>
+    <div class="round">
+        <h3>Round 1</h3>
+    </div>
+    <header class="header">
+        <h1>Rock Paper Scissors</h1>
+    </header>
+    <div class="score-board">
+        <div class="score">
+        <div id="user-label" class="badge1 badge">user</div>
+        <div id="computer-label" class="badge2 badge">comp</div>
+        <h2><span id="user">0</span> &nbsp; | &nbsp;<span id="comp">0</span></h2>
+    </div>
+    <button class="reset" id="reset">Reset</button>
+    </div>
+    <div class="result">
+        <!-- <p>Draw</p> -->
+    </div>
+    <div class="choices">
+        <div class="choice" id="r">
+            <img src="https://res.cloudinary.com/itsellej/image/upload/v1533400140/rock-paper-scissors/rock.png" width="150px" height="150px">
+        </div>
+
+        <div class="choice" id="p">
+            <img src="https://res.cloudinary.com/itsellej/image/upload/v1533400143/rock-paper-scissors/paper.png" width="150px" height="150px">
+        </div>
+
+        <div class="choice" id="s">
+            <img src="https://res.cloudinary.com/itsellej/image/upload/v1533400144/rock-paper-scissors/scissors.png" width="150px" height="150px">
+        </div>
+    </div>
+<p id="action-message">Make your choice</p>
+    <script src="script.js"></script>
 </body>
-<script src="./script.js"></script>
 </html>
