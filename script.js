@@ -1,43 +1,133 @@
-let theArray = ['rock', 'paper', 'scissors'];
+let arr = ['r', 'p', 's']
 
-function getComputerChoice(choices) {
-    let res = choices[Math.floor(Math.random() * choices.length)];
-    return res;
+function comp(e) {
+    let compres = e[Math.floor(Math.random() * e.length)]
+    return compres
 }
 
-function getPlayerChoice() {
-    var pchoice = prompt("Enter your choice: Rock, Paper, or Scissors");
-    return pchoice.toLowerCase();
-}
+let r = document.getElementById('r');
+let p = document.getElementById('p');
+let s = document.getElementById('s');
+var user = document.getElementById('user');
+let computer = document.getElementById('comp');
+let reset = document.getElementById('reset');
+var getComp = "";
+var getUser = "";
+var userScore = 0;
+var compScore = 0;
 
+reset.addEventListener('click', ()=>{
+    userScore=0;
+    compScore=0;
+    user.innerText = `${userScore}`
+        computer.innerText = `${compScore}`
+})
 
-var Computer=0;
-var player=0;
-
-function playRound(playerSelection, computerSelection) {
-    if (playerSelection === computerSelection) {
-        player +=1;
-        Computer += 1;
-        return `This game is a tie -- Yours: ${playerSelection}  Computer: ${computerSelection}`;
-    } else if (
-        (playerSelection === 'rock' && computerSelection === 'scissors') ||
-        (playerSelection === 'scissors' && computerSelection === 'paper') ||
-        (playerSelection === 'paper' && computerSelection === 'rock')
-    ) {
-        player += 1;
-        return `You won the match -- Yours: ${playerSelection}  Computer: ${computerSelection}`;
-    } else {
-        Computer +=1;
-        return `You lost the match -- Yours: ${playerSelection}  Computer: ${computerSelection}`;
+r.addEventListener('click', () => {
+    getComp = comp(arr);
+    getUser = 'r';
+    console.log(getUser, getComp);
+    if (getComp == getUser) {
+        r.classList.add('gray-glow');
+        setTimeout(function () {
+            r.classList.remove('gray-glow');
+        }, 500);
+        user.innerText = `${userScore}`
+        computer.innerText = `${compScore}`
+        
     }
-}
-for(var i=0; i<5 ; i++){
-    playRound(getPlayerChoice(), getComputerChoice(theArray));
-}
-if(Computer === player){
-    console.log(`Finally Match is tie ---Computer=${Computer} and Player=${player}`)
-}else if(Computer > player){
-    console.log(`Finally Computer Own the match ---Computer=${Computer} and Player=${player}`)
-}else{
-    console.log(`Finally You Own the match ---Computer=${Computer} and Player=${player}`)
-}
+    else if ((getUser === 'r' && getComp === 's') ||
+        (getUser === 's' && getComp === 'p') ||
+        (getUser === 'p' && getComp === 'r')
+    ) {
+        r.classList.add('green-glow');
+        setTimeout(function () {
+            r.classList.remove('green-glow');
+        }, 500);
+        userScore = userScore + 1;
+        user.innerText = `${userScore}`
+        computer.innerText = `${compScore}`
+    }
+    else {
+        r.classList.add('red-glow');
+        setTimeout(function () {
+            r.classList.remove('red-glow');
+        }, 500);
+        compScore = compScore + 1;
+        user.innerText = `${userScore}`
+        computer.innerText = `${compScore}`
+    }
+})
+p.addEventListener('click', () => {
+    getComp = comp(arr);
+    getUser = 'p';
+    console.log(getUser, getComp);
+    if (getComp == getUser) {
+        p.classList.add('gray-glow');
+        setTimeout(function () {
+            p.classList.remove('gray-glow');
+        }, 500);
+        user.innerText = `${userScore}`
+        computer.innerText = `${compScore}`
+        
+    }
+    else if ((getUser === 'r' && getComp === 's') ||
+        (getUser === 's' && getComp === 'p') ||
+        (getUser === 'p' && getComp === 'r')
+    ) {
+        p.classList.add('green-glow');
+        setTimeout(function () {
+            p.classList.remove('green-glow');
+        }, 500);
+        userScore = userScore + 1;
+        user.innerText = `${userScore}`
+        computer.innerText = `${compScore}`
+    }
+    else {
+        p.classList.add('red-glow');
+        setTimeout(function () {
+            p.classList.remove('red-glow');
+        }, 500);
+        compScore = compScore + 1;
+        user.innerText = `${userScore}`
+        computer.innerText = `${compScore}`
+
+    }
+
+})
+s.addEventListener('click', () => {
+    getComp = comp(arr);
+    getUser = 's';
+    console.log(getUser, getComp);
+    if (getComp == getUser) {
+        s.classList.add('gray-glow');
+        setTimeout(function () {
+            s.classList.remove('gray-glow');
+        }, 500);
+        user.innerText = `${userScore}`
+        computer.innerText = `${compScore}`
+        
+    }
+    else if ((getUser === 'r' && getComp === 's') ||
+        (getUser === 's' && getComp === 'p') ||
+        (getUser === 'p' && getComp === 'r')
+    ) {
+        s.classList.add('green-glow');
+        setTimeout(function () {
+            s.classList.remove('green-glow');
+        }, 500);
+        userScore = userScore + 1;
+        user.innerText = `${userScore}`
+        computer.innerText = `${compScore}`
+    }
+    else {
+        s.classList.add('red-glow');
+        setTimeout(function () {
+            s.classList.remove('red-glow');
+        }, 500);
+        compScore = compScore + 1;
+        user.innerText = `${userScore}`
+        computer.innerText = `${compScore}`
+    }
+
+})
