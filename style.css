@@ -12,8 +12,10 @@ body,html{
     background-color: #25292b;
     color: white;
     position: relative;
+    overflow: hidden;
 }
 p{
+    margin-top: 20px;
     text-align: center;
 }
 .header{
@@ -152,4 +154,30 @@ border-radius: 12px;
 #btnReset{
     width: 100px;
     height: 50px;
+}
+
+@media screen and (max-width: 700px) {
+    .choices{
+    height: fit-content;
+        /* flex-direction: column; */
+        /* gap: 20px; */
+    }
+    .choice{
+        width: 150px;
+        height: 150px;
+    }
+    .choice img{
+        width: 100px;
+        height: 100px;
+    }
+}
+@media screen and (max-width: 700px) {
+    .choice{
+        width: 100px;
+        height: 100px;
+    }
+    .choice img{
+        width: 80px;
+        height: 80px;
+    }
 }
